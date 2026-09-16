@@ -1,9 +1,18 @@
 from openai import OpenAI
 import json
+import os
+
+
+api_key = os.getenv("DEEPSEEK_API_KEY")
+if not api_key:
+    raise RuntimeError(
+        "未找到 DEEPSEEK_API_KEY。请先在本机设置环境变量，"
+        "不要把真实 API Key 写进代码或提交到 Git。"
+    )
 
 client = OpenAI(
     base_url="https://api.deepseek.com/v1",
-    api_key="sk-97385e2c60b342489b102b17d23effa2",
+    api_key=api_key,
 )
 
 # 第一步：定义一个"工具"——真实能执行的事

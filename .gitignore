@@ -5,3 +5,8 @@ fix_camera.ps1
 Untitled-1.py
 data.json
 test.txt
+.env
+.env.*
+!.env.example
+__pycache__/
+.pytest_cache/
